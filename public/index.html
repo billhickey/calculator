@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <script type="text/javascript" src="index.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display">
+            <div class="sub-display-previous-container">
+                <div class="sub-display-small">
+                    0
+                </div>
+            </div>
+            <div class="sub-display-large">
+                0
+            </div>
+        </div>
+        <div class="row-container">
+            <button value="%" class="pure-button key functional-key"></button>
+            <button value="%" class="pure-button key functional-key"></button>
+            <button value="%" class="pure-button key functional-key">%</button>
+            <button value="AC" class="pure-button key functional-key">AC</button>
+        </div>
+        <div class="row-container">
+            <button value="7" class="pure-button key numeric-key">7</button>
+            <button value="8" class="pure-button key numeric-key">8</button>
+            <button value="9" class="pure-button key numeric-key">9</button>
+            <button value="÷" class="pure-button key functional-key">÷</button>
+        </div>
+        <div class="row-container">
+            <button value="4" class="pure-button key numeric-key">4</button>
+            <button value="5" class="pure-button key numeric-key">5</button>
+            <button value="6" class="pure-button key numeric-key">6</button>
+            <button value="x" class="pure-button key functional-key">x</button>
+        </div>
+        <div class="row-container">
+            <button value="1" class="pure-button key numeric-key">1</button>
+            <button value="2" class="pure-button key numeric-key">2</button>
+            <button value="3" class="pure-button key numeric-key">3</button>
+            <button value="-" class="pure-button key functional-key">-</button>
+        </div>
+        <div class="row-container">
+            <button value="0" class="pure-button key numeric-key">0</button>
+            <button value="." class="pure-button key numeric-key">.</button>
+            <button value="=" class="key equals-key pure-button">=</button>
+            <button value="+" class="pure-button key functional-key">+</button>
+        </div>
+
+        <div class="history">
+        </div>
+    </div>
+</body>
+
+</html>

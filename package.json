@@ -1,0 +1,12 @@
+{
+  "name": "calculator_with_live_public_updates",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "start": "npm i && node app.js"
+  }
+}

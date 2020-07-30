@@ -1,0 +1,104 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.key {
+    width: 23%;
+    height: 70px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    display: inline-block;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.numeric-key {
+    background-color: #dfe1e5 !important;
+}
+
+.functional-key {
+    background-color: #f1f3f4 !important;
+}
+
+.equals-key {
+    background-color: #8094ed !important;
+}
+
+.display {
+    width: 100%;
+    height: 90px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #c0c0c2;
+    padding: 2px;
+}
+
+.sub-display-previous-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.sub-display-small {
+    width: 40%;
+    margin-top: 1px;
+    margin-right: 1px;
+    height: 35%;
+    background-color: #f1f3f4;
+    border-radius: 4px;
+    padding: 2px;
+    text-align: right;
+}
+
+.sub-display-large {
+    width: 80%;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-right: 1px;
+    height: 65%;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding: 5px;
+    text-align: right;
+    
+}
+
+.row-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.history {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    height: 220px;
+    background-color: #c0c0c2;
+}
+
+.previous-calculation {
+    width: 100%;
+    display: flex;
+    margin-bottom: 4px;
+    text-align: end;
+}
+
+.previous-input {
+    width: 50%;
+}
+
+.previous-result {
+    text-align: left;
+    width: 50%;
+}
