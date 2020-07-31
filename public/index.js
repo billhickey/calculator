@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let socket;
 let last10Calculations = [];
-let calculatorRect;
 let calculatorContainer;
 let calculatorState;
 let previousKeyPresses;
@@ -16,9 +15,10 @@ function setUpCalculator() {
     allKeys.forEach(element => {
         element.addEventListener("click", handleKeyClick);
     });
+
     calculatorContainer = document.getElementsByClassName('container')[0];
-    calculatorRect = calculatorContainer.getBoundingClientRect();
     calculatorContainer.addEventListener('mousemove', e => {
+        const calculatorRect = calculatorContainer.getBoundingClientRect();
         const percentY = (e.clientY - calculatorRect.top) / (calculatorRect.bottom - calculatorRect.top)
         const percentX = (e.clientX - calculatorRect.left) / (calculatorRect.right - calculatorRect.left)
         socket.emit('mouseMove', { percentX, percentY });
@@ -66,7 +66,9 @@ function handleKeyClick() {
 }
 
 function drawMice(mice) {
-    mice.forEach(m => {
+    const calculatorRect = calculatorContainer.getBoundingClientRect();
+    var validCoordinates = mice.filter(m => m);
+    validCoordinates.forEach(m => {
         const existingMouseForSocket = Array.from(document.getElementsByClassName(m.socketID));
         if (existingMouseForSocket.length) {
             // modify mouse position if it already exists
@@ -92,7 +94,7 @@ function drawMice(mice) {
     })
     // delete mouse for users that are gone
     const allMice = Array.from(document.getElementsByClassName('mouse'));
-    const existingSockets = mice.map(m => m.socketID);
+    const existingSockets = validCoordinates.map(m => m.socketID);
     const oldMice = allMice.filter(m => !existingSockets.includes(m.id));
     oldMice.forEach(mouse => {
         mouse.remove();
